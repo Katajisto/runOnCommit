@@ -1,3 +1,1 @@
-git clone
-ls
-echo hello
+git pull

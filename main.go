@@ -17,7 +17,9 @@ func commit(rw http.ResponseWriter, req *http.Request) {
 	
 	for _, cmd := range commands {
 		log.Println("Executing: ", cmd)
-		exec.Command(cmd)
+		out, err := exec.Command(cmd).Output()
+		check(err)
+		log.Println(string(out))
 	}
 	
 }
